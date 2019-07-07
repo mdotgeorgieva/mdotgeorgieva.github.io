@@ -1,0 +1,222 @@
+// * {
+// 	border: 1px solid red;
+// }
+
+//Bootstrap
+
+@import "bootstrap-reboot";
+@import "bootstrap-grid";
+// @import "github-corner";
+
+//Variables
+
+$color-dark: #67578D;
+$color-light: #F0EDF7;
+
+$font: 'Open Sans', 'Segoe UI', sans-serif;
+
+//Global
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: $color-dark;
+    font-family: $font;
+
+}
+
+main {
+    flex: 1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: $color-dark;
+    
+    &:hover {
+        color: darken($color-dark, 10%);
+        text-decoration: none;
+    }
+}
+
+button {
+    border-radius: 5px;
+    border: 3px solid darken($color-dark, 10%);
+    background-color: $color-light;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.hidden {
+    display: none;
+ }
+
+ //
+
+.static {
+
+    background-color: $color-light;
+
+    #header-name {
+        display: flex;
+        justify-content: center;
+        padding: 2rem 0;
+        
+        h1 {
+            font-size: 4rem;
+        }
+    }
+
+    .games {
+        display: flex;
+        max-width: 600px;
+        margin: 0 auto;
+        justify-content: space-around;
+        padding-bottom: 5rem;
+
+        #dice-img, 
+        #rps-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $color-dark;
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+
+            img {
+                width: 80%;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.dynamic {
+    background-color: $color-dark;
+    color: $color-light;
+    padding: 5rem 0;
+
+    .intro {
+        font-size: 1.15rem;
+        font-weight: 300;
+        text-align: center;
+        padding-bottom: 2rem;
+        margin-bottom: 0;
+    }
+    
+    #dice-results {
+        display: flex;
+        justify-content: center;
+        padding-top: 3rem;
+
+        .dice-image {
+           width:  100px;
+        }
+
+        .dice-div {
+            padding-right: 1rem;
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            &:nth-child(odd) {
+                padding-top: 1.5rem;
+            }
+        }
+    }
+
+    #rsp-names {
+        padding-top: 0.5rem;
+
+        .player-name {
+            width: 180px;
+            margin-right: 1rem;
+            border-radius: 5px;
+            border: 3px solid darken($color-dark, 10%);
+            background-color: $color-light;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        #continue-game {
+            margin-left: 1rem;
+        }
+    }
+
+    #rsp-results {
+        padding-top: 1.5rem;
+
+        p {
+            margin: 1rem 0 0.3rem 0;
+            font-weight: 700;
+        }
+
+        .player-results {
+            display: flex;
+            align-items: center;
+
+            &:last-child {
+                padding-bottom: 2rem;
+            }
+        }
+
+        .winning-player {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+        }
+
+        .rock,
+        .paper,
+        .scissors,
+        .winner {
+            height: 50px;
+            width: 50px;
+            background-size: contain;
+            background-position: left; 
+            background-repeat: no-repeat;
+        }
+
+        .rock {
+            background-image: url("../images/rps/rock.png");
+        }
+
+        .paper {
+            background-image: url("../images/rps/paper.png");
+        }
+
+        .scissors {
+            background-image: url("../images/rps/scissor.png");
+        }
+
+        .winner {
+            background-image: url("../images/rps/crown.png");
+        }
+    }
+    
+}
+
+footer {
+    flex: 0;
+    background-color: $color-light;
+
+    p {
+        text-align: center;
+        padding: 2rem 0;
+        margin: 0;
+        color: $color-dark; 
+    }
+}
